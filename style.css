@@ -149,6 +149,10 @@ select {
     margin-top: var(--flow-space, 1rem);
 }
 
+.flow--space-small {
+    --flow-space: .5rem
+}
+
 .container {
     padding-inline: 2em;
     margin-inline: auto;
@@ -389,9 +393,10 @@ select {
 
 .underline-indicators > * {
     cursor: pointer;
-    padding: var(--underline-gap, 1rem) 0;
+    padding: var(--underline-gap, .5rem) 0;
     border: 0;
     border-bottom: .2rem solid hsl( var(--clr-white) / 0 );
+    background-color: transparent;
 }
 
 .underline-indicators > *:hover,
@@ -436,19 +441,19 @@ body {
 }
 /* home */
 .home {
-    background-image: url(./assets/home/background-home-mobile.jpg);
+    background-image: url(./assets/shared/background-mobile.jpg);
 }
 
 @media (min-width: 35rem) {
     .home {
         background-position: center center;
-        background-image: url(./assets/home/background-home-tablet.jpg);
+        background-image: url(./assets/shared/background-mobile.jpg);
     }
 }
 
 @media (min-width: 45rem) {
     .home {
-        background-image: url(./assets/home/background-home-desktop.jpg);
+        background-image: url(./assets/shared/background-mobile.jpg);
     }
 } 
 
@@ -484,7 +489,7 @@ body {
         'content';
 }
 
-.grid-container--destination > img {
+.grid-container--destination > picture {
     grid-area: image;
     max-width: 60%;
 }
@@ -519,7 +524,7 @@ body {
         'content';
 }
 
-.grid-container--crew > img {
+.grid-container--crew > picture {
     grid-area: image;
     max-width: 60%;
     border-bottom: 1px snow hsl( var(--clr-white) / .1);
@@ -531,6 +536,10 @@ body {
 
 .grid-container--crew > .crew-details {
     grid-area: content;
+}
+
+.crew-details h2 {
+    color: hsl( var(--clr-white) / .5);
 }
 
 @media (min-width: 35em) {
@@ -583,8 +592,8 @@ body {
     }
 
 
-     .grid-container--destination > img,
-     .grid-container--crew > img {
+     .grid-container--destination > picture,
+     .grid-container--crew > picture {
          max-width: 90%;
 }
     .destination-meta {
@@ -603,7 +612,7 @@ body {
         justify-content: start;
     }
 
-    .grid-container--crew > img {
+    .grid-container--crew > picture {
         align-self: end;
     }
 
